@@ -1,6 +1,4 @@
 rainDrop r;
-int initialTime;
-int interval = 50;
 void setup(){
   r = new rainDrop();
   fullScreen();
@@ -21,7 +19,5 @@ class rainDrop {
 }
 
 void draw(){
-  if(millis() - initialTime > interval){
     r.drip();
-  }
 }
