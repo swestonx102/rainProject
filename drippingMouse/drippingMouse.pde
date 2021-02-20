@@ -7,7 +7,7 @@ void setup(){
 void draw(){
   float r = 0;
   drip(10,50,150);
-  fill(0,15);
+  fill(10,5);
   rect(0,0,width,height);
 }
 
@@ -18,12 +18,12 @@ void drip(int level, int d, float df)//level of recursion, d = delay, df = drip 
   df = random(df);
   fill(100,100,255);
   while(mouseY + df < height){
-  ellipse(mouseX,mouseY + df,5,5);
+  ellipse(random(width),mouseY + df,5,5);
   df = df + random(idf);
   }
-  /*if(level < 1) {
+  if(level < 1) {
   level = level - 1;
   delay(d);
   drip(level,d,df);
-  }*/
+  }
 }
