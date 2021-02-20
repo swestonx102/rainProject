@@ -6,18 +6,21 @@ void setup(){
 
 void draw(){
   float r = 0;
-  drip(10,50);
+  drip(10,50,10);
   fill(0,1);
   rect(0,0,width,height);
 }
 
-void drip(int level, int d){
+void drip(int level, int d, int df)//level of recursion, d = delay, df = drip factor
+{
   int m = millis();
+  int idf = df;//idf = initial drip factor. recursion might bork this
   fill(random(255),random(255),random(255));
-  ellipse(mouseX,mouseY + m%(height - mouseY),5,5);
+  ellipse(mouseX,mouseY + df,5,5);
+  df = df + idf;
   if(level < 1) {
   level = level - 1;
   delay(d);
-  drip(level,d);
+  drip(level,d,df);
   }
 }
