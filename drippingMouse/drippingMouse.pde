@@ -6,16 +6,18 @@ void setup(){
 
 void draw(){
   float r = 0;
-  drip(6);
+  drip(10,50);
   fill(0,1);
   rect(0,0,width,height);
 }
 
-void drip(int level){
+void drip(int level, int d){
   int m = millis();
-  fill(100,100,255);
+  fill(random(255),random(255),random(255));
   ellipse(mouseX,mouseY + m%(height - mouseY),5,5);
-  if(level < 1)
+  if(level < 1) {
   level = level - 1;
-  drip(level);
+  delay(d);
+  drip(level,d);
+  }
 }
