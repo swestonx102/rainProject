@@ -6,7 +6,7 @@ void setup(){
 
 void draw(){
   float r = 0;
-  drip(10,50,150);
+  drip(10,50,40);
   fill(10,5);
   rect(0,0,width,height);
 }
